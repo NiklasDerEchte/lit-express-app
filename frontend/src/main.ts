@@ -1,6 +1,7 @@
 import { html, css, LitElement } from 'lit';
-import { state } from 'lit/decorators.js';
+import { state, customElement } from 'lit/decorators.js';
 
+@customElement('root-element')
 class RootElement extends LitElement {
   static styles = css`
     :host {
@@ -45,5 +46,3 @@ class RootElement extends LitElement {
     `;
   }
 }
-
-customElements.define('root-element', RootElement);
