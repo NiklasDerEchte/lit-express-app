@@ -1,13 +1,12 @@
 import { html, css, LitElement } from 'lit';
 import { state, customElement } from 'lit/decorators.js';
 
-@customElement('root-element')
-class RootElement extends LitElement {
+import '../components/toolbar';
+
+@customElement('homepage-element')
+class Homepage extends LitElement {
   static styles = css`
-    :host {
-      display: block;
-      padding: 16px;
-    }
+    :host {}
   `;
 
   @state()
@@ -37,9 +36,9 @@ class RootElement extends LitElement {
 
   render() {
     return html`
+      <toolbar-element></toolbar-element>
       <h1>Hello from Lit!</h1>
       <p>Welcome to the Lit-based app with Express backend.</p>
-
       ${this._loading
         ? html`<p>Loading...</p>`
         : html`<pre>${JSON.stringify(this._data, null, 2)}</pre>`}

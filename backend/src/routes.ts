@@ -1,8 +1,7 @@
 import { Router } from 'express';
+import apiRouter from './rest/api';
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.json({ message: 'Example response from controller' });
-});
+router.use('/api', apiRouter);
 
 export default router;
